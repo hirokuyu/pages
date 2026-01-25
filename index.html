@@ -6,10 +6,10 @@
   <title>アントラクト｜焼き菓子のお店</title>
   <style>
     :root {
-      --white: #ffffff;
-      --wine: #7a1f2b; /* エンジ */
-      --brown: #5a3a2e;
-      --beige: #f6f2ee;
+  --white: #ffffff;
+  --wine: #7a1f2b;
+  --brown: #5a3a2e;
+  --beige: #f6f2ee;
     }
 
     body {
@@ -20,6 +20,9 @@
       line-height: 1.9;
     }
 
+    /* -------------------------
+      HEADER
+    ------------------------- */
     header {
       background: var(--white);
       border-bottom: 2px solid var(--wine);
@@ -60,6 +63,9 @@
       width: auto;
     }
 
+    /* -------------------------
+      SECTION
+    ------------------------- */
     section {
       max-width: 900px;
       margin: 4rem auto;
@@ -86,6 +92,9 @@
       margin: 2rem 0 1rem;
     }
 
+    /* -------------------------
+      PHOTO
+    ------------------------- */
     .photo {
       background: #ddd;
       height: 220px;
@@ -95,11 +104,15 @@
       color: #666;
       margin: 2rem 0;
       font-size: 0.9rem;
+      width: 100%;
     }
 
+    /* -------------------------
+      GRID
+    ------------------------- */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
     }
 
@@ -110,12 +123,62 @@
       text-align: center;
     }
 
+    /* -------------------------
+      FOOTER
+    ------------------------- */
     footer {
       background: var(--wine);
       color: var(--white);
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.8rem;
+    }
+    /* -------------------------
+      RESPONSIVE DESIGN
+    ------------------------- */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
+
+      section {
+        margin: 2.5rem auto;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .emphasis1 {
+        font-size: 1.2rem;
+      }
+      .emphasis2 {
+        font-size: 1rem;
+      }
+      .photo {
+        height: 180px;
+      }
+      iframe {
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul {
+        font-size: 0.95rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .photo {
+        height: 150px;
+      }
     }
   </style>
 </head>

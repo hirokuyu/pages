@@ -6,10 +6,10 @@
   <title>アントラクト｜焼き菓子のお店</title>
   <style>
     :root {
-  --white: #ffffff;
-  --wine: #7a1f2b;
-  --brown: #5a3a2e;
-  --beige: #f6f2ee;
+      --white: #ffffff;
+      --wine: #7a1f2b;
+      --brown: #5a3a2e;
+      --beige: #f6f2ee;
     }
 
     body {
@@ -180,11 +180,53 @@
         height: 150px;
       }
     }
+        /* ハンバーガーアイコン */
+    .menu-icon {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+    }
+
+    /* チェックボックスは非表示 */
+    .menu-toggle {
+      display: none;
+    }
+
+    /* スマホ用メニュー */
+    @media (max-width: 768px) {
+
+      /* ハンバーガーを表示 */
+      .menu-icon {
+        display: block;
+      }
+
+      /* メニューはデフォルト非表示 */
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      /* チェックが入ったら表示 */
+      .menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+      }
+
+      /* nav のレイアウト調整 */
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+　<label for="menu-toggle" class="menu-icon">☰</label>
   <nav>
     <div class="logo"><img src="images/logo.png" alt="アントラクト ロゴ" /></div>
     <ul>

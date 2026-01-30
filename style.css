@@ -256,6 +256,13 @@ h2 {
   display: block;
   margin: 0 auto 2rem auto;
 }
+.calender img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
 
 /* スマホ用にさらに小さく */
 @media (max-width: 768px) {

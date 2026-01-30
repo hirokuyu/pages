@@ -271,6 +271,16 @@ h2 {
   margin: 2rem 0 1rem;
 }
 
+.emphasis3 {
+  font-weight: bold;
+  color: var(--wine);
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  text-decoration: underline;
+}
+
+
+
 #concept-buttons {
   text-align: center;
   margin: 3rem auto;
@@ -305,17 +315,27 @@ h2 {
 /* -------------------------
   PHOTO
 ------------------------- */
-.photo {
-  background: #ddd;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  margin: 2rem 0;
-  font-size: 0.9rem;
-  width: 100%;
+.photo img {
+  width: 100%;          /* 画面幅いっぱいに広げる */
+  max-width: 900px;     /* PCでは横長に見えるサイズ */
+  height: auto;         /* 縦横比を維持 */
+  aspect-ratio: 16/9;   /* 横長の比率に整える（重要） */
+  object-fit: cover;    /* はみ出す部分は自然にトリミング */
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: 3px solid rgba(255,255,255,0.6);
 }
+
+@media (max-width: 768px) {
+  .photo img {
+    aspect-ratio: 4/3;  /* スマホでは少し縦を広く */
+    max-width: 100%;
+  }
+}
+
 
 /* -------------------------
   GRID

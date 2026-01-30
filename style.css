@@ -249,6 +249,13 @@ h2 {
   display: block;
   margin: 0 0 2rem 0; /* 左寄せ */
 }
+.heading-img2 img {
+  width: 60%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
 
 /* スマホ用にさらに小さく */
 @media (max-width: 768px) {
@@ -315,26 +322,31 @@ h2 {
 /* -------------------------
   PHOTO
 ------------------------- */
+/* PC用 */
 .photo img {
-  width: 100%;          /* 画面幅いっぱいに広げる */
-  max-width: 900px;     /* PCでは横長に見えるサイズ */
-  height: auto;         /* 縦横比を維持 */
-  aspect-ratio: 16/9;   /* 横長の比率に整える（重要） */
-  object-fit: cover;    /* はみ出す部分は自然にトリミング */
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
   display: block;
-  margin: 1.5rem auto;
-  border-radius: 6px;
+  margin: 1.5rem auto 5rem;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   border: 3px solid rgba(255,255,255,0.6);
 }
 
+/* スマホ用 */
 @media (max-width: 768px) {
   .photo img {
-    aspect-ratio: 4/3;  /* スマホでは少し縦を広く */
-    max-width: 100%;
+    width: 100%;        /* ← これがないと重なる */
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    max-height: none;
   }
 }
+
 
 
 /* -------------------------
@@ -391,10 +403,6 @@ footer {
     font-size: 1rem;
   }
 
-  .photo {
-    height: 180px;
-  }
-
   iframe {
     width: 100%;
     height: 300px;
@@ -408,10 +416,6 @@ footer {
 
   h2 {
     font-size: 1.2rem;
-  }
-
-  .photo {
-    height: 150px;
   }
 }
 

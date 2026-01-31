@@ -115,6 +115,13 @@ nav a:hover {
   }
 }
 
+/* スマホでは hover を無効化 */
+@media (max-width: 768px) {
+  .has-sub:hover .sub-menu {
+    display: none;
+  }
+}
+
 /* -------------------------
    CSSだけのスライドショー
 ------------------------- */
@@ -605,7 +612,7 @@ footer {
 }
 
 /* -------------------------
-  products.html商品紹介
+  product.html商品紹介
 ------------------------- */
 .product-category {
   font-size: 1.4rem;

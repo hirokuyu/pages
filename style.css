@@ -113,10 +113,7 @@ nav a:hover {
   .sub-menu li a {
     padding-left: 1.5rem;
   }
-}
-
-/* スマホでは hover を無効化 */
-@media (max-width: 768px) {
+  
   .has-sub:hover .sub-menu {
     display: none;
   }

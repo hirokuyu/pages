@@ -556,3 +556,63 @@ footer {
     padding: 1.4rem;
   }
 }
+/* -------------------------
+  index.html商品紹介
+------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
+  gap: 1.5rem;
+}
+
+/* PC（768px以上）では横一列にする */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4列で横一列 */
+  }
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;        /* 好きな高さに調整できる */
+  object-fit: cover;    /* 画像をトリミングして揃える */
+  border-radius: 10px;
+}
+
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: var(--wine);
+}
+
+.product-card .desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* -------------------------
+  products.html商品紹介
+------------------------- */
+.product-category {
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--wine);
+  text-align: left;
+  padding-left: 0.5rem;
+  border-left: 5px solid var(--wine);
+}

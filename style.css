@@ -320,11 +320,31 @@ h2 {
   font-size: 1.1rem;
   line-height: 1.6;
   transition: 0.2s;
+  position: relative;
+  transition: 0.2s;
+  padding-right: 2rem; /* 矢印のスペースを確保 */
 }
 
 .concept-btn:hover {
   background: #f7f0f0;
 }
+
+.concept-btn::after {
+  content: "→";
+  position: absolute;
+  right: 1rem;        /* 通常位置 */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--wine);
+  transition: right 0.2s ease; /* ← 動きをつける */
+}
+
+.concept-btn:hover::after {
+  right: 0.6rem;      /* ← ここで右に動く */
+}
+
+
 
 /* -------------------------
   PHOTO

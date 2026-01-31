@@ -71,10 +71,15 @@
 <div class="back-btn-wrap">
   <a href="index.html" class="back-btn">← トップページに戻る</a>
 </div>
-
+<script>
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+</script>
 <footer>
   © お菓子のお店 アントラクト
 </footer>
-
 </body>
 </html>

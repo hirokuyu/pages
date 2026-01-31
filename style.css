@@ -532,4 +532,28 @@ footer {
     background-attachment: scroll; /* 固定を解除して自然に */
   }
 }
+/* -------------------------
+  index.html白のカード
+------------------------- */
+.note-card {
+  background: var(--white);
+  padding: 1.2rem;        /* 内側の余白を少し減らす */
+  margin: 0.5rem 0 1.5rem; /* 上0.5rem、下1.5remでスッキリ */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 5px solid var(--wine);
+}
 
+.note-card .emphasis3 {
+  background: #fdf7f7;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+
+@media (max-width: 768px) {
+  .note-card {
+    padding: 1.4rem;
+  }
+}

@@ -376,6 +376,7 @@ h2 {
   FOOTER
 ------------------------- */
 footer {
+  width: 100%;
   background: var(--wine);
   color: var(--white);
   text-align: center;

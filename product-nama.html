@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生菓子｜アントラクト</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="アントラクト ロゴ" />
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="nav-menu">
+          <li><a href="index.html#information">お知らせ</a></li>
+          <li><a href="index.html#about">私たちについて</a></li>
+          <li><a href="index.html#calendar">営業について</a></li>
+          <li class="has-sub">
+            <a href="index.html#products">商品紹介</a>
+            <ul class="sub-menu">
+              <li><a href="product-cookie.html">クッキー</a></li>
+              <li><a href="product-yakitate.html">できたて</a></li>
+              <li><a href="product-nama.html">生菓子</a></li>
+              <li><a href="product-gift.html">ギフト</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#access">お店の場所</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-detail">
+        <h2 class="product-category">商品一覧</h2>
+        <div class="product-grid cookie-grid">
+          <article class="product-card cookie-card">
+            <img
+              src="images/products/namagashi/purin.JPG"
+              alt="アントラクトのプレミアムプリン"
+            />
+            <h3>アントラクトのプレミアムプリン</h3>
+            <p class="desc">
+              深谷にある田中農場さんの「宝玉卵」をたっぷりと使用して作りました！卵臭さのない、コクのある味わいで、まるでカスタードクリームをそのまま食べているかのような、プレミアムな口溶けをお楽しみください！！
+            </p>
+            <p class="price">350円</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="back-btn-wrap">
+        <a href="index.html#products" class="back-btn">商品一覧に戻る</a>
+      </div>
+    </main>
+
+    <footer>© お菓子のお店 アントラクト</footer>
+
+    <script>
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("menu-toggle").checked = false;
+        });
+      });
+    </script>
+  </body>
+</html>

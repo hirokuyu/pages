@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ギフト｜アントラクト</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="アントラクト ロゴ" />
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="nav-menu">
+          <li><a href="index.html#information">お知らせ</a></li>
+          <li><a href="index.html#about">私たちについて</a></li>
+          <li><a href="index.html#calendar">営業について</a></li>
+          <li class="has-sub">
+            <a href="index.html#products">商品紹介</a>
+            <ul class="sub-menu">
+              <li><a href="product-cookie.html">クッキー</a></li>
+              <li><a href="product-yakitate.html">できたて</a></li>
+              <li><a href="product-nama.html">生菓子</a></li>
+              <li><a href="product-gift.html">ギフト</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#access">お店の場所</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-detail">
+        <h2 class="product-category">商品一覧</h2>
+        <div class="product-grid cookie-grid">
+          <article class="product-card cookie-card">
+            <img
+              src="images/products/gift/entract-gift.jpg"
+              alt="アントラクトギフト（S）"
+            />
+            <h3>アントラクトギフト（S）</h3>
+            <p class="desc">
+              ぜひ食べていただきたいオススメの焼き菓子を６コ詰め合わせました！
+            </p>
+            <p class="price">2100円</p>
+          </article>
+
+          <article class="product-card cookie-card">
+            <img
+              src="images/products/gift/entract-giftM.jpg"
+              alt="アントラクトギフト（M）"
+            />
+            <h3>アントラクトギフト（M）</h3>
+            <p class="desc">
+              ぜひ食べていただきたいオススメの焼き菓子を１０コ詰め合わせました！
+            </p>
+            <p class="price">3600円</p>
+          </article>
+
+          <article class="product-card cookie-card">
+            <img src="images/products/gift/ribon-sabre.jpg" alt="リボンサブレギフト" />
+            <h3>リボンサブレギフト</h3>
+            <p class="desc">定番のサブレ３種を詰め合わせました</p>
+            <p class="price">2200円</p>
+          </article>
+
+          <article class="product-card cookie-card">
+            <img src="images/products/gift/komugiisbox.JPG" alt="コムギーズBOX" />
+            <h3>コムギーズBOX</h3>
+            <p class="desc">焼菓子４コ入り。ちょっとしたギフトにどうぞ！</p>
+            <p class="price">1000円</p>
+          </article>
+
+          <article class="product-card cookie-card">
+            <img src="images/products/gift/marukan.JPG" alt="まる缶ギフト" />
+            <h3>まる缶ギフト</h3>
+            <p class="desc">焼き菓子３コ入。内容は時期によって変わります</p>
+            <p class="price">1000円</p>
+          </article>
+
+          <article class="product-card cookie-card">
+            <img src="images/products/gift/sikakukan.JPG" alt="しかく缶ギフト" />
+            <h3>しかく缶ギフト</h3>
+            <p class="desc">焼菓子５コ入り。内容は時期によって変わります</p>
+            <p class="price">1500円</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="back-btn-wrap">
+        <a href="index.html#products" class="back-btn">商品一覧に戻る</a>
+      </div>
+    </main>
+
+    <footer>© お菓子のお店 アントラクト</footer>
+
+    <script>
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("menu-toggle").checked = false;
+        });
+      });
+    </script>
+  </body>
+</html>

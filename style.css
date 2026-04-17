@@ -1,90 +1,118 @@
 :root {
   --white: #ffffff;
   --wine: #7a1f2b;
+  --wine-dark: #6a2a2a;
   --brown: #5a3a2e;
   --beige: #f6f2ee;
+  --border-light: #dddddd;
+  --accent-soft: #f3e9e9;
+  --accent-soft-alt: #f7f0f0;
+  --card-soft: #fdf7f7;
+  --text-muted: #555555;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --transition-base: 0.2s ease;
 }
 
 body {
   margin: 0;
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  line-height: 1.9;
+  color: var(--brown);
   background: var(--beige) url("images/background.png") no-repeat center center fixed;
   background-size: cover;
-  color: var(--brown);
-  line-height: 1.9;
 }
 
+section,
+#information,
+.information,
+.details,
+.page-hero,
+.product-detail {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
 
-/* -------------------------
-  HEADER
-------------------------- */
+h2 {
+  margin-bottom: 0;
+}
+
 header {
-  background: var(--white);
-  border-bottom: 2px solid var(--wine);
   position: sticky;
   top: 0;
   z-index: 10;
+  background: var(--white);
+  border-bottom: 2px solid var(--wine);
 }
 
 nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-  padding: 0;
-  margin: 0;
-  font-size: 0.9rem;
 }
 
 nav a {
-  text-decoration: none;
   color: var(--brown);
+  text-decoration: none;
 }
 
 nav a:hover {
   color: var(--wine);
 }
 
-.logo img {
-  height: 40px;
-  width: auto;
-}
-/* 親メニュー */
+nav ul,
 .nav-menu {
-  list-style: none;
+  display: flex;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
+  font-size: 0.9rem;
+  list-style: none;
 }
 
 .nav-menu > li {
   position: relative;
 }
 
-/* 子メニュー（最初は非表示） */
-.sub-menu {
+.logo img {
+  width: auto;
+  height: 40px;
+}
+
+.menu-toggle {
   display: none;
+}
+
+.menu-icon {
+  display: none;
+  padding: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sub-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--white);
-  list-style: none;
-  padding: 0.5rem 0;
-  margin: 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  min-width: 180px;
   z-index: 1000;
+  display: none;
+  min-width: 180px;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
 }
 
-/* 子メニューの項目 */
 .sub-menu li a {
   display: block;
   padding: 0.5rem 1rem;
@@ -94,216 +122,173 @@ nav a:hover {
 }
 
 .sub-menu li a:hover {
-  background: #f3e9e9;
+  background: var(--accent-soft);
 }
 
-/* 親メニューにホバーしたら子メニューを表示 */
 .has-sub:hover .sub-menu {
   display: block;
 }
 
-/* スマホ対応（ハンバーガーメニュー内でも崩れない） */
-@media (max-width: 768px) {
-  .sub-menu {
-    position: static;
-    border: none;
-    background: none;
-  }
-
-  .sub-menu li a {
-    padding-left: 1.5rem;
-  }
-  
-  .has-sub:hover .sub-menu {
-    display: none;
-  }
-}
-
-/* -------------------------
-   CSSだけのスライドショー
-------------------------- */
 .slideshow {
   position: relative;
   width: 100%;
-  height: 60vh; /* 高さは好みで調整 */
+  height: 60vh;
   overflow: hidden;
 }
 
 .slideshow .slide {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background-size: contain;
+  opacity: 0;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0;
+  background-size: cover;
   animation: fade 12s infinite;
 }
 
-/* 各スライドの開始タイミングをずらす */
 .slideshow .slide:nth-child(1) {
   animation-delay: 0s;
 }
+
 .slideshow .slide:nth-child(2) {
   animation-delay: 4s;
 }
+
 .slideshow .slide:nth-child(3) {
   animation-delay: 8s;
 }
 
-/* フェードアニメーション */
 @keyframes fade {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  30% { opacity: 1; }
-  40% { opacity: 0; }
-  100% { opacity: 0; }
-}
+  0% {
+    opacity: 0;
+  }
 
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .slideshow {
-    height: 40vh;
+  10% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
-/* -------------------------
-   Information（お知らせ）
-------------------------- */
-.information {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+#information h2,
+.information h2,
+.details h2 {
+  padding-left: 0.8rem;
+  border-left: 5px solid var(--wine);
 }
 
+#information h2,
 .information h2 {
-  border-left: 5px solid var(--wine);
-  padding-left: 0.8rem;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
 
+.details h2 {
+  margin-top: 3rem;
+}
+
 .info-list {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .info-list li {
-  background: var(--white);
-  padding: 1rem;
   margin-bottom: 0.8rem;
+  padding: 1rem;
+  background: var(--white);
   border-left: 4px solid var(--wine);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .info-list .date {
+  margin-right: 0.5rem;
   font-weight: bold;
   color: var(--wine);
-  margin-right: 0.5rem;
 }
 
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .information h2 {
-    font-size: 1.3rem;
-  }
-
-  .info-list li {
-    font-size: 0.95rem;
-  }
+.info-list .post-date {
+  display: inline-block;
+  margin-right: 0.75rem;
 }
-/* すべて非表示 */
+
 .news-item {
   display: none;
 }
 
-/* URL の #news1 などが一致したときだけ表示 */
 .news-item:target {
   display: block;
 }
 
-/* 画像のスタイル */
 .news-img {
+  display: block;
   width: 100%;
   max-width: 600px;
-  display: block;
   margin: 1.5rem auto;
   border-radius: 6px;
 }
 
-
-/* -------------------------
-  SECTION
-------------------------- */
-section {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-}
-
-h2 {
-  margin-bottom: auto;
-}
 .heading-img img {
+  display: block;
   width: 60%;
   max-width: 400px;
   height: auto;
-  display: block;
-  margin: 0 0 2rem 0; /* 左寄せ */
+  margin: 0 0 2rem;
 }
+
 .heading-img2 img {
+  display: block;
   width: 60%;
   max-width: 400px;
   height: auto;
-  display: block;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2rem;
 }
+
 .calender img {
+  display: block;
   width: 80%;
   max-width: 600px;
   height: auto;
-  display: block;
-  margin: 0 auto 2rem auto;
-}
-
-/* スマホ用にさらに小さく */
-@media (max-width: 768px) {
-  .heading-img img {
-    width: 80%;
-    max-width: 300px;
-  }
+  margin: 0 auto 2rem;
 }
 
 .emphasis1 {
+  margin: 2rem 0 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: var(--wine);
-  font-size: 1.3rem;
-  margin: 2rem 0 1rem;
 }
 
 .emphasis2 {
-  font-weight: bold;
-  font-size: 1.1rem;
   margin: 2rem 0 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .emphasis3 {
+  margin: 2rem 0 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--wine);
-  font-size: 1.5rem;
-  margin: 2rem 0 1rem;
   text-decoration: underline;
 }
 
-
-
 #concept-buttons {
-  text-align: center;
   margin: 3rem auto;
   padding: 0 1rem;
+  text-align: center;
 }
 
 .concept-list {
@@ -315,113 +300,363 @@ h2 {
 }
 
 .concept-btn {
+  position: relative;
   display: block;
-  background: var(--white);
-  border: 2px solid var(--wine);
-  padding: 1.2rem;
-  border-radius: 8px;
-  text-decoration: none;
+  padding: 1.2rem 2rem 1.2rem 1.2rem;
   color: var(--brown);
   font-size: 1.1rem;
   line-height: 1.6;
-  transition: 0.2s;
-  position: relative;
-  transition: 0.2s;
-  padding-right: 2rem; /* 矢印のスペースを確保 */
+  text-decoration: none;
+  background: var(--white);
+  border: 2px solid var(--wine);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base);
 }
 
 .concept-btn:hover {
-  background: #f7f0f0;
+  background: var(--accent-soft-alt);
 }
 
 .concept-btn::after {
   content: "→";
   position: absolute;
-  right: 1rem;        /* 通常位置 */
   top: 50%;
-  transform: translateY(-50%);
+  right: 1rem;
   font-size: 1.2rem;
   color: var(--wine);
-  transition: right 0.2s ease; /* ← 動きをつける */
+  transform: translateY(-50%);
+  transition: right var(--transition-base);
 }
 
 .concept-btn:hover::after {
-  right: 0.6rem;      /* ← ここで右に動く */
+  right: 0.6rem;
 }
 
+.photo {
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--brown);
+}
 
-
-/* -------------------------
-  PHOTO
-------------------------- */
-/* PC用 */
 .photo img {
+  display: block;
   width: 100%;
   max-width: 900px;
   height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  display: block;
   margin: 1.5rem auto 5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border: 3px solid rgba(255,255,255,0.6);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
 }
 
-/* スマホ用 */
-@media (max-width: 768px) {
-  .photo img {
-    width: 100%;        /* ← これがないと重なる */
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
-    max-height: none;
-  }
-}
-
-
-
-/* -------------------------
-  GRID
-------------------------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
 }
 
-.card {
+.card,
+.note-card,
+.product-card,
+.product-summary,
+.product-feature {
   background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.card {
   padding: 1rem;
-  border-radius: 4px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+}
+
+.note-card {
+  margin: 0.2rem 0 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+.note-card .emphasis3 {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  background: var(--card-soft);
+  border-radius: var(--radius-sm);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.product-card {
+  padding: 1rem;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  transition: transform var(--transition-base);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.product-card h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  color: var(--wine);
+}
+
+.product-card .desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.product-category {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+  text-align: left;
+  color: var(--wine);
+  border-left: 5px solid var(--wine);
+}
+
+.page-hero {
+  margin-bottom: 2rem;
+}
+
+.breadcrumb {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: var(--wine);
+  text-decoration: none;
+}
+
+.page-lead {
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.product-summary,
+.product-feature {
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+}
+
+.product-summary img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.product-summary h2,
+.product-feature h2 {
+  margin: 1rem 0 0.8rem;
+  font-size: 1.6rem;
+  color: var(--wine);
+}
+
+.product-lead {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.product-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.product-note {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: var(--card-soft);
+  border-radius: var(--radius-md);
+}
+
+.cookie-grid {
+  gap: 2rem 1.5rem;
+}
+
+.cookie-card {
+  height: 100%;
+  text-align: left;
+}
+
+.cookie-card h3 {
+  margin-top: 1rem;
+}
+
+.cookie-card .desc {
+  line-height: 1.7;
+}
+
+.cookie-card .price {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  color: var(--wine);
+}
+
+.back-btn-wrap {
+  margin: 3rem 0;
   text-align: center;
 }
 
-/* -------------------------
-  FOOTER
-------------------------- */
+.back-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  background: var(--wine);
+  border-radius: 6px;
+  transition: background-color var(--transition-base);
+}
+
+.back-btn:hover {
+  background: var(--wine-dark);
+}
+
+.insta-icon {
+  margin: 10px 0;
+  font-size: 32px;
+  color: #e4405f;
+  text-decoration: none;
+}
+
+.insta-icon:hover,
+.insta-link:hover {
+  opacity: 0.7;
+}
+
+.calendar-info .insta-icon {
+  margin-left: 6px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.insta-link {
+  font-weight: bold;
+  color: #e4405f;
+  text-decoration: none;
+}
+
+.insta-link i {
+  margin-right: 4px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
 footer {
   width: 100%;
-  background: var(--wine);
-  color: var(--white);
-  text-align: center;
   padding: 2rem 1rem;
   font-size: 0.8rem;
+  text-align: center;
+  color: var(--white);
+  background: var(--wine);
 }
 
-/* -------------------------
-  RESPONSIVE DESIGN
-------------------------- */
 @media (max-width: 768px) {
-  nav ul {
+  body {
+    background-attachment: scroll;
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  nav {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav ul,
+  .nav-menu {
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
     margin-top: 1rem;
     font-size: 1rem;
-  } 
+  }
 
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  .menu-toggle:checked ~ ul {
+    display: flex;
+  }
+
+  .sub-menu {
+    position: static;
+    background: none;
+    border: none;
+  }
+
+  .sub-menu li a {
+    padding-left: 1.5rem;
+  }
+
+  .has-sub:hover .sub-menu {
+    display: none;
+  }
+
+  .slideshow {
+    height: 40vh;
+  }
+
+  #information h2,
+  .information h2,
   h2 {
     font-size: 1.3rem;
+  }
+
+  .info-list li {
+    font-size: 0.95rem;
+  }
+
+  .heading-img img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .photo img {
+    width: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .note-card {
+    padding: 1.4rem;
+  }
+
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-summary img {
+    height: 240px;
   }
 
   .emphasis1 {
@@ -438,220 +673,19 @@ footer {
   }
 }
 
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 480px) {
-  nav ul {
+  nav ul,
+  .nav-menu {
     font-size: 0.95rem;
   }
 
   h2 {
     font-size: 1.2rem;
   }
-}
-
-/* -------------------------
-  HAMBURGER MENU
-------------------------- */
-.menu-icon {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .menu-icon {
-    display: block;
-    margin-left: auto;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .menu-toggle:checked ~ ul {
-    display: flex;
-  }
-}
-/* -------------------------
-  details.html
-------------------------- */
-.details {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-.details h2 {
-  margin-top: 3rem;
-  border-left: 5px solid var(--wine);
-  padding-left: 0.8rem;
-}
-
-.photo {
-  margin: 2rem 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--brown);
-}
-
-.back-btn-wrap {
-  text-align: center;
-  margin: 3rem 0;
-}
-
-.back-btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: var(--wine);
-  color: var(--white);
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: 0.2s;
-}
-
-.back-btn:hover {
-  background: #6a2a2a; /* 少し濃いワイン色 */
-}
-
-/* スマホで背景柄が拡大されないようにする */
-@media (max-width: 768px) {
-  body {
-    background-size: contain;
-    background-repeat: repeat; /* 必要なら繰り返し */
-    background-attachment: scroll; /* 固定を解除して自然に */
-  }
-}
-/* -------------------------
-  index.html白のカード
-------------------------- */
-.note-card {
-  background: var(--white);
-  padding: 1rem;          /* 内側の余白も少しだけ詰める */
-  margin: 0.2rem 0 1rem;  /* ← 上を0.2remまで縮める */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.note-card .emphasis3 {
-  background: #fdf7f7;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-
-@media (max-width: 768px) {
-  .note-card {
-    padding: 1.4rem;
-  }
-}
-/* -------------------------
-  index.html商品紹介
-------------------------- */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
-  gap: 1.5rem;
-}
-
-/* PC（768px以上）では横一列にする */
-@media (min-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4列で横一列 */
-  }
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;        /* 好きな高さに調整できる */
-  object-fit: cover;    /* 画像をトリミングして揃える */
-  border-radius: 10px;
-}
-
-
-.product-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-  color: var(--wine);
-}
-
-.product-card .desc {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* -------------------------
-  product.html商品紹介
-------------------------- */
-.product-category {
-  font-size: 1.4rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  color: var(--wine);
-  text-align: left;
-  padding-left: 0.5rem;
-  border-left: 5px solid var(--wine);
-}
-
-.insta-icon {
-  font-size: 32px;
-  color: #E4405F; /* Instagramカラー */
-  text-decoration: none;
-  margin: 10px 0;
-}
-
-.insta-icon:hover {
-  opacity: 0.7;
-}
-
-.calendar-info .insta-icon {
-  margin-left: 6px;      /* 文字との間隔 */
-  font-size: 20px;       /* アイコンの大きさ */
-  color: #E4405F;        /* Instagramカラー */
-  vertical-align: middle; /* 文字と高さを揃える */
-}
-
-.insta-link {
-  color: #E4405F;        /* Instagramカラー */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.insta-link i {
-  margin-right: 4px;     /* アイコンと文字の間隔 */
-  font-size: 20px;       /* アイコンの大きさ */
-  vertical-align: middle;
-}
-
-.insta-link:hover {
-  opacity: 0.7;
 }

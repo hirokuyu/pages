@@ -1,276 +1,291 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJJLXRQP87"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アントラクト｜焼き菓子のお店</title>
 
-  gtag('config', 'G-DJJLXRQP87');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>アントラクト｜焼き菓子のお店</title>
-</head>
-<body>
-<header>
-  <nav>
-    <a href="index.html" class="logo"> <img src="images/logo.png" alt="アントラクト ロゴ"> </a>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DJJLXRQP87"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-DJJLXRQP87");
+    </script>
 
-    <!-- ロゴのすぐ右に置く -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">☰</label>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="アントラクト ロゴ" />
+        </a>
 
-    <ul class="nav-menu">
-      <li><a href="index.html#information">お知らせ</a></li>
-    
-      <li class="has-sub">
-        <a href="index.html#information">私たちについて</a>
-        <ul class="sub-menu">
-          <li><a href="index.html#information">店名の由来</a></li>
-          <li><a href="details.html#details">3つのこだわり</a></li>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <ul class="nav-menu">
+          <li><a href="index.html#information">お知らせ</a></li>
+          <li class="has-sub">
+            <a href="index.html#about">私たちについて</a>
+            <ul class="sub-menu">
+              <li><a href="index.html#origin">店名の由来</a></li>
+              <li><a href="details.html#details">3つのこだわり</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#calendar">営業について</a></li>
+          <li class="has-sub">
+            <a href="index.html#products">商品紹介</a>
+            <ul class="sub-menu">
+              <li><a href="product-cookie.html">クッキー</a></li>
+              <li><a href="product-yakitate.html">できたて</a></li>
+              <li><a href="product-nama.html">生菓子</a></li>
+              <li><a href="product-gift.html">ギフト</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a href="index.html#notes">ご案内</a>
+            <ul class="sub-menu">
+              <li><a href="index.html#attention">注意してほしいこと</a></li>
+              <li><a href="index.html#kigen">期限について</a></li>
+              <li><a href="index.html#reserve">予約について</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#access">お店の場所</a></li>
         </ul>
-      </li>
-    
-      <li><a href="index.html#calendar">営業について</a></li>
-    
-      <li class="has-sub">
-        <a href="index.html#products">商品紹介</a>
-        <ul class="sub-menu">
-          <li><a href="products.html#cookie">クッキー</a></li>
-          <li><a href="products.html#fresh">できたて</a></li>
-          <li><a href="products.html#nama">生菓子</a></li>
-          <li><a href="products.html#gift">ギフト</a></li>
-        </ul>
-      </li>
-    
-      <li class="has-sub">
-        <a href="index.html#photo">ご案内</a>
-        <ul class="sub-menu">
-          <li><a href="index.html#notes">注意してほしいこと</a></li>
-          <li><a href="index.html#attention">期限について</a></li>
-          <li><a href="index.html#kigen">予約について</a></li>
-        </ul>
-      </li>
-    
-      <li class="has-sub">
-        <a href="index.html#access">お店の場所</a>
-      </li>
-    </ul>    
-  </nav>
-</header>
-<div class="slideshow">
-  <div class="slide" style="background-image: url('images/news/open.JPG');"></div>
-  <div class="slide" style="background-image: url('images/slide.JPG');"></div>
-  <div class="slide" style="background-image: url('images/slide2.jpg');"></div>
-</div> 
-<section id="information">
-  <h2 class="heading-img">
-    <img src="images/heading/information.png" alt="お知らせ">
-  </h2>
-  <ul class="info-list">
-    <li>2026/4/4　　　<a href="news.html#news1"><span class="date">4/12</span>に開業いたします。</a>皆さまのご来店を心よりお待ちしております。</li>
-  </ul>   
-  <ul class="info-list">
-    <li>2026/4/4　　　<span class="date">4/13・14</span>はお休みをいただき、<span class="date">4/15</span>より通常営業となります。</li>
-  </ul> 
-  <ul class="info-list">
-    <li>2026/4/4　　　<a href="index.html#calendar">4月のカレンダー</a>更新しました。</li>
-  </ul> 
-  
-</section>
+      </nav>
+    </header>
 
-<section id="about">
-  <h2 id="origin" class="heading-img">
-    <img src="images/heading/about-title.png" alt="about us｜私たちについて">
-  </h2>
-  <p>
-    アントラクト（entracte）は演劇用語で、劇の1幕と2幕の間。
-    <br />
-    休憩時間や、その間に流れる間奏曲のことを指します。
-  </p>
-  <p>
-    家事や仕事の”あいだ”
-    <br />
-    友人と自分の”あいだ”
-    <br />
-    辛かった出来事から元気を取り戻す”あいだ”
-  </p>
-  <p>
-    日常の色々な場面で訪れる”あいだ”に寄り添う
-    <br />
-    「間奏曲 - アントラクト -」のようなお菓子を作りたい。
-    <br />
-    「お菓子を食べる時間が、その人にとって特別なものになってほしい」
-    <br />
-    そんな想いが込められています。
-  </p>
-  <div class="photo">
-    <img src="images/yakigashi.jpg" alt="焼き菓子の写真">
-  </div>
-</section>
-
-  <section id="concept-buttons">
-    <h2 class="heading-img2">
-      <img src="images/heading/kodawari.png" alt="3つのこだわり">
-    </h2>
-  
-    <div class="concept-list">
-      <a href="details.html#has-sub" class="concept-btn">
-        作りたてのおいしさを届けます
-      </a>
-  
-      <a href="details.html#select" class="concept-btn">
-        焼き菓子は焼き菓子屋さんで<br>と選んでもらえるように
-      </a>
-  
-      <a href="details.html#relation" class="concept-btn">
-        お客様とアントラクト<br>1対1の関係を忘れずに
-      </a>
+    <div class="slideshow">
+      <div
+        class="slide"
+        style="background-image: url('images/sllideshow/slide1.JPG')"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url('images/sllideshow/slide2.JPG')"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url('images/sllideshow/slide3.JPG')"
+      ></div>
     </div>
-  </section>
-  
-<section id="calendar">
-  <h2 class="heading-img">
-    <img src="images/heading/shop.png" alt="about us｜営業について">
-  </h2>
-  <p class="calendar-info">
-    <a href="https://www.instagram.com/entracte_okashiya/" target="_blank" class="insta-link">
-      <i class="fa-brands fa-instagram"></i> Instagram
-    </a>
-    、店頭でもご確認いただけます。<br>
-    定休日：不定休（赤丸が定休日）<br>
-    営業時間：11:00〜17:00（売り切れ次第閉店）
-  </p>
-  <h2 class="calender">
-    <img src="images/calender.PNG" alt="カレンダー">
-  </h2>
-</section>
 
-<section id="products">
-  <h2 class="heading-img">
-    <img src="images/heading/products.png" alt="商品一覧">
-  </h2>
+    <section id="information">
+      <h2 class="heading-img">
+        <img src="images/heading/information.png" alt="お知らせ" />
+      </h2>
 
-  <div class="product-grid">
+      <ul class="info-list">
+        <li>
+          <span class="post-date">2026/4/4</span>
+          <a href="news.html#news1"><span class="date">4/12</span>に開業いたします。</a>
+          皆さまのご来店を心よりお待ちしております。
+        </li>
+        <li>
+          <span class="post-date">2026/4/4</span>
+          <span class="date">4/13・14</span>はお休みをいただき、
+          <span class="date">4/15</span>より通常営業となります。
+        </li>
+        <li>
+          <span class="post-date">2026/4/4</span>
+          <a href="index.html#calendar">4月のカレンダー</a>を更新しました。
+        </li>
+      </ul>
+    </section>
 
-    <a href="products.html#cookie" class="product-card">
-      <img src="images/products/cookie.jpg" alt="クッキー">
-      <h3>クッキー</h3>
-      <p class="desc">サクサク食感の定番人気</p>
-    </a>  
+    <section id="about">
+      <h2 id="origin" class="heading-img">
+        <img src="images/heading/about-title.png" alt="about us｜私たちについて" />
+      </h2>
 
-    <a href="products.html#fresh" class="product-card">
-      <img src="images/products/tsukuritate.jpg" alt="作りたて">
-      <h3>作りたて</h3>
-      <p class="desc">朝焼きの香りをそのままに</p>
-    </a>
-    
-    <a href="products.html#nama" class="product-card">
-      <img src="images/products/cake.jpg" alt="生菓子">
-      <h3>生菓子</h3>
-      <p class="desc">季節の素材を使った贅沢な一品</p>
-    </a>
-    
-    <a href="products.html#gift" class="product-card">
-      <img src="images/products/gift.jpg" alt="ギフト">
-      <h3>ギフト</h3>
-      <p class="desc">贈り物にぴったりの詰め合わせ</p>
-    </a>    
-  </div>
-</section>
+      <p>
+        アントラクト（entracte）は演劇用語で、劇の1幕と2幕の間。<br />
+        休憩時間や、その間に流れる間奏曲のことを指します。
+      </p>
 
-<section id="notes">
-  <h2 class="heading-img">
-    <img src="images/heading/attention.png" alt="来店に際しての注意">
-  </h2>
+      <p>
+        家事や仕事の“あいだ”<br />
+        友人と自分の“あいだ”<br />
+        辛かった出来事から元気を取り戻す“あいだ”
+      </p>
 
-  <!-- ▼ 注意してほしいこと -->
-  <div class="note-card" id="attention">
-    <p class="emphasis3">ご来店に際して、注意していただきたいこと</p>
-    <p>
-      足を運んでくださった全ての方に気持ちよくお買い物をしていただき、
-      <br />
-      その温かい気持ちも一緒にお持ち帰りいただけるように
-      <br />
-      丁寧な接客を心がけています。
-    </p>
-    <p>
-      しかしながら、アントラクトは店主ひとりで製造、販売を行っています。
-      <br />
-      きっと、商品お渡しまでお待たせしてしまうこともあるかもしれません。
-      <br />
-      <span class="emphasis2">どうか、お時間と心に余裕を持ちご来店いただけたらと思います。</span>
-      <br />
-      
-    </p>
-  </div>
+      <p>
+        日常の色々な場面で訪れる“あいだ”に寄り添う<br />
+        「間奏曲 - アントラクト -」のようなお菓子を作りたい。<br />
+        「お菓子を食べる時間が、その人にとって特別なものになってほしい」<br />
+        そんな想いが込められています。
+      </p>
 
-  <!-- ▼ 期限について -->
-  <div class="note-card" id="kigen">
-    <p class="emphasis3">賞味期限について</p>
-    <p>
-      一番おいしい状態で味わっていただきたい想いから、
-      <br />
-      賞味期限は短めに設定しています。
-      <br />
-      贈答用のお菓子をお求めの場合は、ご利用日をお確かめの上でご購入をお願いします。
-    </p>
-  </div>
+      <div class="photo">
+        <img src="images/yakigashi.jpg" alt="焼き菓子の写真" />
+      </div>
+    </section>
 
-  <!-- ▼ 予約について -->
-  <div class="note-card" id="reserve">
-    <p class="emphasis3">ご予約について</p>
-    <p>
-      当店は作りたての美味しさにこだわっているため、
-      <br />
-      ご用意できるお菓子の数には限りがございます。
-      <br />
-      一度にたくさんのお菓子をお求めの場合は
-      <br />
-      事前にご予約いただくことをお願いしております。
-      <br />
-      心を込めてご用意させていただきますので、ご相談ください。
-      <br />
-      <span class="emphasis2">ご予約は店頭にて承っております。</span>
-    </p>
-  </div>
+    <section id="concept-buttons">
+      <h2 class="heading-img2">
+        <img src="images/heading/kodawari.png" alt="3つのこだわり" />
+      </h2>
 
-</section>
+      <div class="concept-list">
+        <a href="details.html#has-sub" class="concept-btn">
+          作りたてのおいしさを届けます
+        </a>
 
+        <a href="details.html#select" class="concept-btn">
+          焼き菓子は焼き菓子屋さんで<br />
+          と選んでもらえるように
+        </a>
 
-<section id="access">
-  <h2 class="heading-img">
-    <img src="images/heading/access.png" alt="アクセス">
-  </h2>
-  <p>
-    住所：〒350-2221 埼玉県鶴ヶ島市羽折町７−１７
-  <br />
-    駐車場：店舗横2台／店舗裏5台
-  <br />
-　<br />
-    ・坂戸駅から徒歩約20分
-  <br />
-    ・鶴ヶ島インターから車で約6分
-  </p>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.806399385567!2d139.3796584760019!3d35.951705672501156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d63e2713b0e7%3A0x305fe29ecea7f3c3!2z44CSMzUwLTIyMjEg5Z-8546J55yM6ba044O25bO25biC57695oqY55S677yX4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1769702285816!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</section>
-<script>
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('menu-toggle').checked = false;
-    });
-  });
-</script>
+        <a href="details.html#relation" class="concept-btn">
+          お客様とアントラクト<br />
+          1対1の関係を忘れずに
+        </a>
+      </div>
+    </section>
 
-<footer>
-  © お菓子のお店　アントラクト
-</footer>
+    <section id="calendar">
+      <h2 class="heading-img">
+        <img src="images/heading/shop.png" alt="about us｜営業について" />
+      </h2>
 
-</body>
+      <p class="calendar-info">
+        <a
+          href="https://www.instagram.com/entracte_okashiya/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="insta-link"
+        >
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        、店頭でもご確認いただけます。<br />
+        定休日：不定休（赤丸が定休日）<br />
+        営業時間：11:00〜17:00（売り切れ次第閉店）
+      </p>
+
+      <h2 class="calender">
+        <img src="images/calender.PNG" alt="カレンダー" />
+      </h2>
+    </section>
+
+    <section id="products">
+      <h2 class="heading-img">
+        <img src="images/heading/products.png" alt="商品一覧" />
+      </h2>
+
+      <div class="product-grid">
+        <a href="product-cookie.html" class="product-card">
+          <img src="images/products/cookie.jpg" alt="クッキー" />
+          <h3>クッキー</h3>
+          <p class="desc">サクサク食感の定番人気</p>
+        </a>
+
+        <a href="product-yakitate.html" class="product-card">
+          <img src="images/products/tsukuritate.jpg" alt="作りたて" />
+          <h3>作りたて</h3>
+          <p class="desc">朝焼きの香りをそのままに</p>
+        </a>
+
+        <a href="product-nama.html" class="product-card">
+          <img src="images/products/cake.jpg" alt="生菓子" />
+          <h3>生菓子</h3>
+          <p class="desc">季節の素材を使った贅沢な一品</p>
+        </a>
+
+        <a href="product-gift.html" class="product-card">
+          <img src="images/products/gift.jpg" alt="ギフト" />
+          <h3>ギフト</h3>
+          <p class="desc">贈り物にぴったりの詰め合わせ</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="notes">
+      <h2 class="heading-img">
+        <img src="images/heading/attention.png" alt="来店に際しての注意" />
+      </h2>
+
+      <div class="note-card" id="attention">
+        <p class="emphasis3">ご来店に際して、注意していただきたいこと</p>
+        <p>
+          足を運んでくださった全ての方に気持ちよくお買い物をしていただき、<br />
+          その温かい気持ちも一緒にお持ち帰りいただけるように<br />
+          丁寧な接客を心がけています。
+        </p>
+        <p>
+          しかしながら、アントラクトは店主ひとりで製造、販売を行っています。<br />
+          きっと、商品お渡しまでお待たせしてしまうこともあるかもしれません。<br />
+          <span class="emphasis2">
+            どうか、お時間と心に余裕を持ちご来店いただけたらと思います。
+          </span>
+        </p>
+      </div>
+
+      <div class="note-card" id="kigen">
+        <p class="emphasis3">賞味期限について</p>
+        <p>
+          一番おいしい状態で味わっていただきたい想いから、<br />
+          賞味期限は短めに設定しています。<br />
+          贈答用のお菓子をお求めの場合は、ご利用日をお確かめの上でご購入をお願いします。
+        </p>
+      </div>
+
+      <div class="note-card" id="reserve">
+        <p class="emphasis3">ご予約について</p>
+        <p>
+          当店は作りたての美味しさにこだわっているため、<br />
+          ご用意できるお菓子の数には限りがございます。<br />
+          一度にたくさんのお菓子をお求めの場合は<br />
+          事前にご予約いただくことをお願いしております。<br />
+          心を込めてご用意させていただきますので、ご相談ください。<br />
+          <span class="emphasis2">ご予約は店頭にて承っております。</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="access">
+      <h2 class="heading-img">
+        <img src="images/heading/access.png" alt="アクセス" />
+      </h2>
+
+      <p>
+        住所：〒350-2221 埼玉県鶴ヶ島市羽折町７−１７<br />
+        駐車場：店舗横2台／店舗裏5台<br />
+        <br />
+        ・坂戸駅から徒歩約20分<br />
+        ・鶴ヶ島インターから車で約6分
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.806399385567!2d139.3796584760019!3d35.951705672501156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d63e2713b0e7%3A0x305fe29ecea7f3c3!2z44CSMzUwLTIyMjEg5Z-8546J55yM6ba044O25bO25biC57695oqY55S677yX4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1769702285816!5m2!1sja!2sjp"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <footer>© お菓子のお店 アントラクト</footer>
+
+    <script>
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("menu-toggle").checked = false;
+        });
+      });
+    </script>
+  </body>
 </html>

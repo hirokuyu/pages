@@ -40,7 +40,11 @@
       <section class="product-detail">
         <h2 class="product-category">商品一覧</h2>
         <div class="product-grid cookie-grid">
-          <article class="product-card cookie-card">
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/gift/entract-gift.jpg"
+            data-alt="アントラクトギフト（S）"
+          >
             <img
               src="images/products/gift/entract-gift.jpg"
               alt="アントラクトギフト（S）"
@@ -52,7 +56,11 @@
             <p class="price">2100円</p>
           </article>
 
-          <article class="product-card cookie-card">
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/gift/entract-giftM.jpg"
+            data-alt="アントラクトギフト（M）"
+          >
             <img
               src="images/products/gift/entract-giftM.jpg"
               alt="アントラクトギフト（M）"
@@ -64,29 +72,57 @@
             <p class="price">3600円</p>
           </article>
 
-          <article class="product-card cookie-card">
-            <img src="images/products/gift/ribon-sabre.jpg" alt="リボンサブレギフト" />
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/gift/ribon-sabre.jpg"
+            data-alt="リボンサブレギフト"
+          >
+            <img
+              src="images/products/gift/ribon-sabre.jpg"
+              alt="リボンサブレギフト"
+            />
             <h3>リボンサブレギフト</h3>
             <p class="desc">定番のサブレ３種を詰め合わせました</p>
             <p class="price">2200円</p>
           </article>
 
-          <article class="product-card cookie-card">
-            <img src="images/products/gift/komugiisbox.JPG" alt="コムギーズBOX" />
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/gift/komugiisbox.JPG"
+            data-alt="コムギーズBOX"
+          >
+            <img
+              src="images/products/gift/komugiisbox.JPG"
+              alt="コムギーズBOX"
+            />
             <h3>コムギーズBOX</h3>
             <p class="desc">焼菓子４コ入り。ちょっとしたギフトにどうぞ！</p>
             <p class="price">1000円</p>
           </article>
 
-          <article class="product-card cookie-card">
-            <img src="images/products/gift/marukan.JPG" alt="まる缶ギフト" />
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/gift/marukan.JPG"
+            data-alt="まる缶ギフト"
+          >
+            <img
+              src="images/products/gift/marukan.JPG"
+              alt="まる缶ギフト"
+            />
             <h3>まる缶ギフト</h3>
             <p class="desc">焼き菓子３コ入。内容は時期によって変わります</p>
             <p class="price">1000円</p>
           </article>
 
-          <article class="product-card cookie-card">
-            <img src="images/products/gift/sikakukan.JPG" alt="しかく缶ギフト" />
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/gift/sikakukan.JPG"
+            data-alt="しかく缶ギフト"
+          >
+            <img
+              src="images/products/gift/sikakukan.JPG"
+              alt="しかく缶ギフト"
+            />
             <h3>しかく缶ギフト</h3>
             <p class="desc">焼菓子５コ入り。内容は時期によって変わります</p>
             <p class="price">1500円</p>
@@ -99,6 +135,18 @@
       </div>
     </main>
 
+    <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+      <button
+        type="button"
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="拡大画像を閉じる"
+      >
+        ×
+      </button>
+      <img id="lightbox-image" src="" alt="" />
+    </div>
+
     <footer>© お菓子のお店 アントラクト</footer>
 
     <script>
@@ -106,6 +154,41 @@
         link.addEventListener("click", () => {
           document.getElementById("menu-toggle").checked = false;
         });
+      });
+
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxClose = document.getElementById("lightbox-close");
+
+      document.querySelectorAll(".zoomable-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          lightboxImage.src = card.dataset.image;
+          lightboxImage.alt = card.dataset.alt;
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("lightbox-open");
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+        document.body.classList.remove("lightbox-open");
+      };
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
       });
     </script>
   </body>

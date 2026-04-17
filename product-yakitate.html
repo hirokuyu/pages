@@ -40,8 +40,15 @@
       <section class="product-detail">
         <h2 class="product-category">商品一覧</h2>
         <div class="product-grid cookie-grid">
-          <article class="product-card cookie-card">
-            <img src="images/products/yakitate/finanche.jpg" alt="フィナンシェ" />
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/yakitate/finanche.jpg"
+            data-alt="フィナンシェ"
+          >
+            <img
+              src="images/products/yakitate/finanche.jpg"
+              alt="フィナンシェ"
+            />
             <h3>フィナンシェ</h3>
             <p class="desc">
               アーモンドとバターを贅沢に使用した風味豊かなフィナンシェ（グルテンフリー）
@@ -49,7 +56,11 @@
             <p class="price">260円</p>
           </article>
 
-          <article class="product-card cookie-card">
+          <article
+            class="product-card cookie-card zoomable-card"
+            data-image="images/products/yakitate/finanche_genmai.JPG"
+            data-alt="玄米フィナンシェ"
+          >
             <img
               src="images/products/yakitate/finanche_genmai.JPG"
               alt="玄米フィナンシェ"
@@ -68,6 +79,18 @@
       </div>
     </main>
 
+    <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+      <button
+        type="button"
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="拡大画像を閉じる"
+      >
+        ×
+      </button>
+      <img id="lightbox-image" src="" alt="" />
+    </div>
+
     <footer>© お菓子のお店 アントラクト</footer>
 
     <script>
@@ -75,6 +98,41 @@
         link.addEventListener("click", () => {
           document.getElementById("menu-toggle").checked = false;
         });
+      });
+
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxClose = document.getElementById("lightbox-close");
+
+      document.querySelectorAll(".zoomable-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          lightboxImage.src = card.dataset.image;
+          lightboxImage.alt = card.dataset.alt;
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("lightbox-open");
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+        document.body.classList.remove("lightbox-open");
+      };
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
       });
     </script>
   </body>

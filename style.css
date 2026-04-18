@@ -410,6 +410,20 @@ nav ul,
   border-radius: var(--radius-lg);
 }
 
+.no-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  background: linear-gradient(135deg, #f5eee8, #ece0d6);
+  border: 1px dashed #c8b5a6;
+  border-radius: var(--radius-lg);
+}
+
 .zoomable-card {
   cursor: zoom-in;
 }

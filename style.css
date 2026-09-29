@@ -547,7 +547,7 @@ nav ul,
 }
 
 .cookie-card {
-  height: 100%;
+  min-width: 0;
   text-align: left;
 }
 

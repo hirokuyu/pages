@@ -258,21 +258,38 @@ nav ul,
 
 .calender {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
   margin: 0 auto 2rem;
 }
 
-.calender img {
-  display: block;
+.calendar-frame {
+  position: relative;
   width: calc((100% - 1.5rem) / 2);
   flex: 0 1 calc((100% - 1.5rem) / 2);
-  max-width: 100%;
-  height: auto;
+  aspect-ratio: 960 / 680;
+  overflow: hidden;
 }
 
-.calender img.calendar-wide {
+.calendar-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Show September only; trim the combined image's outer whitespace. */
+.calendar-september img {
+  position: absolute;
+  max-width: none;
+  width: 200%;
+  height: 119.865%;
+  left: -100%;
+  top: -4.054%;
+}
+
+.calender > p {
   width: 100%;
   flex-basis: 100%;
 }
@@ -724,7 +741,7 @@ footer {
     max-width: 300px;
   }
 
-  .calender img {
+  .calendar-frame {
     width: 100%;
     flex-basis: 100%;
   }

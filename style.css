@@ -279,16 +279,6 @@ nav ul,
   height: 100%;
 }
 
-/* Show September only; trim the combined image's outer whitespace. */
-.calendar-september img {
-  position: absolute;
-  max-width: none;
-  width: 200%;
-  height: 119.865%;
-  left: -100%;
-  top: -4.054%;
-}
-
 .calender > p {
   width: 100%;
   flex-basis: 100%;
